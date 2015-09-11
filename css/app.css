@@ -1,0 +1,95 @@
+ul.pagination {
+  display: block;
+  min-height: 1.71429rem;
+  margin-left: -0.35714rem; }
+  ul.pagination li {
+    height: 1.71429rem;
+    color: #222222;
+    font-size: 1rem;
+    margin-left: 0.35714rem; }
+    ul.pagination li a, ul.pagination li button {
+      display: block;
+      padding: 0.07143rem 0.71429rem 0.07143rem;
+      color: #999999;
+      background: none;
+      border-radius: 5px;
+      font-weight: normal;
+      font-size: 1em;
+      line-height: inherit;
+      transition: background-color 300ms ease-out; }
+    ul.pagination li:hover a,
+    ul.pagination li a:focus, ul.pagination li:hover button,
+    ul.pagination li button:focus {
+      background: #e6e6e6; }
+    ul.pagination li.unavailable a, ul.pagination li.unavailable button {
+      cursor: default;
+      color: #999999; }
+    ul.pagination li.unavailable:hover a, ul.pagination li.unavailable a:focus, ul.pagination li.unavailable:hover button, ul.pagination li.unavailable button:focus {
+      background: transparent; }
+    ul.pagination li.current a, ul.pagination li.current button {
+      background: #198dae;
+      color: #FFFFFF;
+      font-weight: bold;
+      cursor: default; }
+      ul.pagination li.current a:hover, ul.pagination li.current a:focus, ul.pagination li.current button:hover, ul.pagination li.current button:focus {
+        background: #198dae; }
+  ul.pagination li {
+    float: left;
+    display: block; }
+
+a {
+    text-decoration: none;
+}
+
+.row .row {
+    width: auto;
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: none;
+}
+.pagination-holder, .result-selector-holder {
+    border-top: 2px solid #198dae;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: none;
+}
+
+.left {
+    float: left !important;
+}
+ul, ol, dl {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.42857rem;
+    list-style-position: outside;
+    font-family: inherit;
+}
+
+.bottom .pagination.result-selector li.label {
+    border-radius: 0px 0px 0px 5px;
+}
+.pagination.result-selector li.label {
+    padding-left: .25em;
+    padding-right: .25em;
+    background-color: #e6e6e6;
+}
+.pagination.result-selector li.label, .pagination.result-selector li.value {
+    color: #5c5c5c;
+    font-weight: 700;
+}
+
+.right {
+    float: right !important;
+}
+
+ul.pagination li.arrow a, ul.pagination li.arrow button {
+    background-color: #e6e6e6;
+    border-radius: 0px 0px 0px 5px;
+    color: #5c5c5c;
+    font-weight: 700;
+}
