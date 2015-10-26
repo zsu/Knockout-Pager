@@ -19,6 +19,7 @@
         self.pagesFirstGroup = ko.observableArray([]);
         self.pagesSecondGroup = ko.observableArray([]);
         self.pagesFirstGroupComputed = ko.computed(function () {
+            var underlyingArray = self.pagesFirstGroup();
             if (self.totalPages() > 10) {
                 if (params.PageNumber() <= 5) {
                     self.pagesFirstGroup([1, 2, 3, 4, 5]);
@@ -26,29 +27,34 @@
                 else if (params.PageNumber() >= self.totalPages() - 9) {
                     self.pagesFirstGroup.removeAll();
                     for (var i = self.totalPages() - 9; i < self.totalPages() - 4; i++) {
-                        self.pagesFirstGroup.push(i);
+                        underlyingArray.push(i);
                     }
+                    self.pagesFirstGroup.valueHasMutated();
                 }
                 else {
                     self.pagesFirstGroup.removeAll();
                     for (var i = params.PageNumber() - 1; i < params.PageNumber() + 4; i++) {
-                        self.pagesFirstGroup.push(i);
+                        underlyingArray.push(i);
                     }
+                    self.pagesFirstGroup.valueHasMutated();
                 }
             }
             else {
                 self.pagesFirstGroup.removeAll();
                 for (var i = 1; i <= self.totalPages() ; i++) {
-                    self.pagesFirstGroup.push(i);
+                    underlyingArray.push(i);
                 }
+                self.pagesFirstGroup.valueHasMutated();
             }
         });
         self.pagesSecondGroupComputed = ko.computed(function () {
             if (self.totalPages() > 10) {
                 self.pagesSecondGroup.removeAll();
+                var underlyingArray = self.pagesSecondGroup();
                 for (var i = self.totalPages() - 4; i <= self.totalPages() ; i++) {
-                    self.pagesSecondGroup.push(i);
+                    underlyingArray.push(i);
                 }
+                self.pagesSecondGroup.valueHasMutated();
             }
             else {
                 self.pagesSecondGroup([]);
